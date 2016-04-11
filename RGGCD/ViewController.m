@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "RGGCD/RGGCD.h"
 
 @interface ViewController ()
 
