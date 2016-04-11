@@ -24,6 +24,7 @@ static RGDispatchQueue *unspecifiedGlobalQueue;
 
 @implementation RGDispatchQueue
 
+#pragma mark 初始化
 - (instancetype)init {
     if (self == [super init]) {
         self.dispatchQueue = dispatch_queue_create(nil, DISPATCH_QUEUE_CONCURRENT);
@@ -50,6 +51,7 @@ static RGDispatchQueue *unspecifiedGlobalQueue;
     return self;
 }
 
+#pragma mark 分类队列
 + (RGDispatchQueue *)mainQueue {
     mainQueue = [[RGDispatchQueue alloc] initWithQueueType:None];
     mainQueue.dispatchQueue = dispatch_get_main_queue();
@@ -92,6 +94,7 @@ static RGDispatchQueue *unspecifiedGlobalQueue;
     return unspecifiedGlobalQueue;
 }
 
+#pragma mark 实例方法
 - (void)perform:(dispatch_block_t)performance {
     dispatch_async(self.dispatchQueue, performance);
 }
@@ -103,6 +106,8 @@ static RGDispatchQueue *unspecifiedGlobalQueue;
     dispatch_after(delayTime, self.dispatchQueue, performance);
 }
 
+#pragma mark 类方法
+#pragma mark Performance in queue
 + (void)performInMainQueue:(dispatch_block_t)performance {
     [[RGDispatchQueue mainQueue] perform:performance];
 }
@@ -131,6 +136,7 @@ static RGDispatchQueue *unspecifiedGlobalQueue;
     [[RGDispatchQueue unspecifiedGlobalQueue] perform:performance];
 }
 
+#pragma mark Performance delay
 + (void)performInMainQueueDelay:(int64_t)seconds
                     performance:(dispatch_block_t)performance
 {
