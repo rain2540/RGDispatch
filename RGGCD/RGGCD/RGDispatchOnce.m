@@ -1,0 +1,18 @@
+//
+//  RGDispatchOnce.m
+//  RGGCD
+//
+//  Created by RAIN on 16/5/5.
+//  Copyright © 2016年 Smartech. All rights reserved.
+//
+
+#import "RGDispatchOnce.h"
+
+@implementation RGDispatchOnce
+
++ (void)perform:(dispatch_block_t)performance {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, performance);
+}
+
+@end

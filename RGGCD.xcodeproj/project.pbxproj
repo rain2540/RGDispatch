@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B737CDB41CDB4AB6006C6010 /* RGDispatchOnce.m in Sources */ = {isa = PBXBuildFile; fileRef = B737CDB31CDB4AB6006C6010 /* RGDispatchOnce.m */; };
 		B755C6181CBB3D3400D06428 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B755C6171CBB3D3400D06428 /* main.m */; };
 		B755C61B1CBB3D3400D06428 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B755C61A1CBB3D3400D06428 /* AppDelegate.m */; };
 		B755C61E1CBB3D3400D06428 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B755C61D1CBB3D3400D06428 /* ViewController.m */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B737CDB21CDB4AB6006C6010 /* RGDispatchOnce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGDispatchOnce.h; sourceTree = "<group>"; };
+		B737CDB31CDB4AB6006C6010 /* RGDispatchOnce.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGDispatchOnce.m; sourceTree = "<group>"; };
 		B755C6131CBB3D3400D06428 /* RGGCD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RGGCD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B755C6171CBB3D3400D06428 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B755C6191CBB3D3400D06428 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -88,6 +91,8 @@
 			isa = PBXGroup;
 			children = (
 				B755C6311CBB3E8400D06428 /* RGGCD.h */,
+				B737CDB21CDB4AB6006C6010 /* RGDispatchOnce.h */,
+				B737CDB31CDB4AB6006C6010 /* RGDispatchOnce.m */,
 				B755C62E1CBB3E7300D06428 /* RGDispatchQueue.h */,
 				B755C62F1CBB3E7300D06428 /* RGDispatchQueue.m */,
 			);
@@ -168,6 +173,7 @@
 				B755C61B1CBB3D3400D06428 /* AppDelegate.m in Sources */,
 				B755C6301CBB3E7300D06428 /* RGDispatchQueue.m in Sources */,
 				B755C6181CBB3D3400D06428 /* main.m in Sources */,
+				B737CDB41CDB4AB6006C6010 /* RGDispatchOnce.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

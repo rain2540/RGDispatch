@@ -10,5 +10,6 @@
 //#define RGGCD_h
 
 #import "RGDispatchQueue.h"
+#import "RGDispatchOnce.h"
 
 //#endif /* RGGCD_h */
