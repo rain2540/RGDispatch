@@ -18,7 +18,7 @@ static RGDispatchQueue *unspecifiedGlobalQueue;
 
 @interface RGDispatchQueue ()
 
-@property (readwrite, strong, nonatomic) dispatch_queue_t dispatchQueue;
+@property (nonatomic, readwrite, strong) dispatch_queue_t dispatchQueue;
 
 @end
 
