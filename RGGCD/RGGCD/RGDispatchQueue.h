@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSUInteger, DispatchQueueType) {
-    Concurrent, // 并行队列
-    Serial,     // 串行队列
-    None,
+    DispatchQueueTypeConcurrent, // 并行队列
+    DispatchQueueTypeSerial,     // 串行队列
+    DispatchQueueTypeNone,
 };
 
 @interface RGDispatchQueue : NSObject
