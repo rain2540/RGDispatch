@@ -8,6 +8,12 @@
 
 #import "RGDispatchSemaphore.h"
 
+@interface RGDispatchSemaphore ()
+
+@property (nonatomic, readwrite, strong) dispatch_semaphore_t semaphore;
+
+@end
+
 @implementation RGDispatchSemaphore
 
 @end
