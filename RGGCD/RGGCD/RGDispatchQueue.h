@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-typedef enum {
-    Concurrent, //  并行队列
-    Serial,     //  串行队列
-    None
-} DispatchQueueType;
+typedef NS_ENUM(NSUInteger, DispatchQueueType) {
+    Concurrent, // 并行队列
+    Serial,     // 串行队列
+    None,
+};
 
 @interface RGDispatchQueue : NSObject
 
