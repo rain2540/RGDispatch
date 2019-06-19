@@ -16,7 +16,7 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 
 @interface RGDispatchQueue : NSObject
 
-@property (readonly, strong, nonatomic) dispatch_queue_t dispatchQueue;
+@property (nonatomic, readonly, strong) dispatch_queue_t dispatchQueue;
 
 #pragma mark 初始化
 - (instancetype)init;
