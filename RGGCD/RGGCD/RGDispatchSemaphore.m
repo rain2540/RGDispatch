@@ -23,4 +23,11 @@
     return self;
 }
 
+- (instancetype)initWithValue:(NSInteger)value {
+    if (self == [super init]) {
+        self.semaphore = dispatch_semaphore_create(value);
+    }
+    return self;
+}
+
 @end
