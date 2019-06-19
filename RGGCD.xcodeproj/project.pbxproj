@@ -15,6 +15,7 @@
 		B755C6231CBB3D3500D06428 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B755C6221CBB3D3500D06428 /* Assets.xcassets */; };
 		B755C6261CBB3D3500D06428 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B755C6241CBB3D3500D06428 /* LaunchScreen.storyboard */; };
 		B755C6301CBB3E7300D06428 /* RGDispatchQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B755C62F1CBB3E7300D06428 /* RGDispatchQueue.m */; };
+		B7CC234D22B9C2BE00CCD737 /* RGDispatchSemaphore.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CC234C22B9C2BE00CCD737 /* RGDispatchSemaphore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,8 @@
 		B755C62E1CBB3E7300D06428 /* RGDispatchQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGDispatchQueue.h; sourceTree = "<group>"; };
 		B755C62F1CBB3E7300D06428 /* RGDispatchQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGDispatchQueue.m; sourceTree = "<group>"; };
 		B755C6311CBB3E8400D06428 /* RGGCD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RGGCD.h; sourceTree = "<group>"; };
+		B7CC234B22B9C2BE00CCD737 /* RGDispatchSemaphore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RGDispatchSemaphore.h; sourceTree = "<group>"; };
+		B7CC234C22B9C2BE00CCD737 /* RGDispatchSemaphore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RGDispatchSemaphore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +98,8 @@
 				B737CDB31CDB4AB6006C6010 /* RGDispatchOnce.m */,
 				B755C62E1CBB3E7300D06428 /* RGDispatchQueue.h */,
 				B755C62F1CBB3E7300D06428 /* RGDispatchQueue.m */,
+				B7CC234B22B9C2BE00CCD737 /* RGDispatchSemaphore.h */,
+				B7CC234C22B9C2BE00CCD737 /* RGDispatchSemaphore.m */,
 			);
 			path = RGGCD;
 			sourceTree = "<group>";
@@ -138,6 +143,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -170,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B755C61E1CBB3D3400D06428 /* ViewController.m in Sources */,
+				B7CC234D22B9C2BE00CCD737 /* RGDispatchSemaphore.m in Sources */,
 				B755C61B1CBB3D3400D06428 /* AppDelegate.m in Sources */,
 				B755C6301CBB3E7300D06428 /* RGDispatchQueue.m in Sources */,
 				B755C6181CBB3D3400D06428 /* main.m in Sources */,
