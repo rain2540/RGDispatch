@@ -40,4 +40,9 @@
     return resValue;
 }
 
+- (NSInteger)signal {
+    NSInteger resValue = dispatch_semaphore_signal(self.semaphore);
+    return resValue;
+}
+
 @end
