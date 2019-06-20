@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)init;
 
+- (instancetype)initWithValue:(NSInteger)value;
+
 @end
 
 NS_ASSUME_NONNULL_END
