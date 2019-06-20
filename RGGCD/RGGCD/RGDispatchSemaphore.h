@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RGDispatchSemaphore : NSObject
 
+/// 初始化
 - (instancetype)init;
 
 - (instancetype)initWithValue:(NSInteger)value;
