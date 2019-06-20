@@ -30,4 +30,9 @@
     return self;
 }
 
+- (NSInteger)waitFor:(NSInteger)timeout {
+    NSInteger resValue = dispatch_semaphore_wait(self.semaphore, timeout);
+    return resValue;
+}
+
 @end
