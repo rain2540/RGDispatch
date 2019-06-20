@@ -35,4 +35,9 @@
     return resValue;
 }
 
+- (NSInteger)wait {
+    NSInteger resValue = dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
+    return resValue;
+}
+
 @end
