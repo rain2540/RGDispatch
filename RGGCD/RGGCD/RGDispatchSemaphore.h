@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RGDispatchSemaphore : NSObject
 
+- (instancetype)init;
+
 @end
 
 NS_ASSUME_NONNULL_END
