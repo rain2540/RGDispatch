@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSInteger)waitFor:(NSInteger)timeout;
 
+- (NSInteger)wait;
+
 @end
 
 NS_ASSUME_NONNULL_END
