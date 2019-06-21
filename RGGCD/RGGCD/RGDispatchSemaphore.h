@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithValue:(NSInteger)value;
 
+- (NSInteger)waitFor:(NSInteger)timeout;
+
 @end
 
 NS_ASSUME_NONNULL_END
