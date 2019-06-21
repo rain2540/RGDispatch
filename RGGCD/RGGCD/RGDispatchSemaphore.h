@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSInteger)wait;
 
+- (NSInteger)signal;
+
 @end
 
 NS_ASSUME_NONNULL_END
