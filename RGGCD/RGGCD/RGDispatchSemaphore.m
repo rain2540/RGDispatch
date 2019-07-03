@@ -18,6 +18,7 @@
 #pragma mark -
 @implementation RGDispatchSemaphore
 
+#pragma mark Initializer
 - (instancetype)init {
     if (self == [super init]) {
         self.semaphore = dispatch_semaphore_create(0);
