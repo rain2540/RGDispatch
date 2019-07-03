@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithValue:(NSInteger)value;
 
+
+#pragma mark - Public
 - (NSInteger)waitFor:(NSInteger)timeout;
 
 - (NSInteger)wait;
