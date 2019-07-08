@@ -8,9 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ 队列类型
+
+ - DispatchQueueTypeConcurrent: 并行队列
+ - DispatchQueueTypeSerial: 串行队列
+ - DispatchQueueTypeNone: 不指定类型
+ */
 typedef NS_ENUM(NSUInteger, DispatchQueueType) {
-    DispatchQueueTypeConcurrent, // 并行队列
-    DispatchQueueTypeSerial,     // 串行队列
+    DispatchQueueTypeConcurrent,
+    DispatchQueueTypeSerial,
     DispatchQueueTypeNone,
 };
 
