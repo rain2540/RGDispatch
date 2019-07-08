@@ -35,7 +35,8 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 - (instancetype)init;
 - (instancetype)initWithQueueType:(DispatchQueueType)queueType;
 
-#pragma mark 分类队列
+
+#pragma mark - Queues
 /**
  *  返回主线程队列
  *
@@ -85,7 +86,8 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
  */
 + (RGDispatchQueue *)unspecifiedGlobalQueue;
 
-#pragma mark 实例方法
+
+#pragma mark - Performance
 /**
  *  在调度队列上提交一个异步执行的 block, 并且立即返回
  *
@@ -93,6 +95,16 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
  */
 - (void)perform:(dispatch_block_t)performance;
 
++ (void)performInMainQueue:(dispatch_block_t)performance;
++ (void)performInDefaultGlobalQueue:(dispatch_block_t)performance;
++ (void)performInUserInteractiveGlobalQueue:(dispatch_block_t)performance;
++ (void)performInUtilityGlobalQueue:(dispatch_block_t)performance;
++ (void)performInBackgroundGlobalQueue:(dispatch_block_t)performance;
++ (void)performInUserInitiatedGlobalQueue:(dispatch_block_t)performance;
++ (void)performInUnspecifiedGlobalQueue:(dispatch_block_t)performance;
+
+
+#pragma mark - Performance Delay
 /**
  *  在指定时间执行的 block
  *
@@ -102,23 +114,18 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 - (void)performDelay:(int64_t)seconds
          performance:(dispatch_block_t)performance;
 
-#pragma mark 类方法
-#pragma mark Performance in queue
-+ (void)performInMainQueue:(dispatch_block_t)performance;
-+ (void)performInDefaultGlobalQueue:(dispatch_block_t)performance;
-+ (void)performInUserInteractiveGlobalQueue:(dispatch_block_t)performance;
-+ (void)performInUtilityGlobalQueue:(dispatch_block_t)performance;
-+ (void)performInBackgroundGlobalQueue:(dispatch_block_t)performance;
-+ (void)performInUserInitiatedGlobalQueue:(dispatch_block_t)performance;
-+ (void)performInUnspecifiedGlobalQueue:(dispatch_block_t)performance;
-
-#pragma mark Performance delay
 + (void)performInMainQueueDelay:(int64_t)seconds performance:(dispatch_block_t)performance;
+
 + (void)performInDefaultGlobalQueueDelay:(int64_t)seconds performance:(dispatch_block_t)performance;
+
 + (void)performInUserInteractiveGlobalQueueDelay:(int64_t)seconds performance:(dispatch_block_t)performance;
+
 + (void)performInUtilityGlobalQueueDelay:(int64_t)seconds performance:(dispatch_block_t)performance;
+
 + (void)performInBackgroundGlobalQueueDelay:(int64_t)seconds performance:(dispatch_block_t)performance;
+
 + (void)performInUserInitiatedGlobalQueueDelay:(int64_t)seconds performance:(dispatch_block_t)performance;
+
 + (void)performInUnspecifiedGlobalQueueDelay:(int64_t)seconds performance:(dispatch_block_t)performance;
 
 @end
