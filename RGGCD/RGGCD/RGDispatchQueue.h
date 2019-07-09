@@ -95,6 +95,11 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
  */
 - (void)perform:(dispatch_block_t)performance;
 
+/**
+ 在主线程队列上提交一个异步执行的 block, 并且立即返回
+
+ @param performance 要提交到主线程队列的 block, 此参数不能为 NULL
+ */
 + (void)performInMainQueue:(dispatch_block_t)performance;
 + (void)performInDefaultGlobalQueue:(dispatch_block_t)performance;
 + (void)performInUserInteractiveGlobalQueue:(dispatch_block_t)performance;
