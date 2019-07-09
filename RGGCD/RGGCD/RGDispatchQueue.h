@@ -111,7 +111,7 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 
 #pragma mark - Performance Delay
 /**
- *  在指定时间执行的 block
+ *  在指定时间间隔执行的 block
  *
  *  @param seconds     指定的时间间隔
  *  @param performance 要提交的 block, 此参数不能为 NULL
@@ -119,6 +119,12 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 - (void)performDelay:(int64_t)seconds
          performance:(dispatch_block_t)performance;
 
+/**
+ 在主线程队列上提交一个在指定时间间隔、异步执行的 block
+
+ @param seconds 指定的时间间隔
+ @param performance 要提交到主线程队列的 block, 此参数不能为 NULL
+ */
 + (void)performInMainQueueDelay:(int64_t)seconds performance:(dispatch_block_t)performance;
 
 + (void)performInDefaultGlobalQueueDelay:(int64_t)seconds performance:(dispatch_block_t)performance;
