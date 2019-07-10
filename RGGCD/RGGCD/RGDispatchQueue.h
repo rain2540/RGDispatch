@@ -113,6 +113,11 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
  @param performance 要提交到目标调度队列的 block, 此参数不能为 NULL
  */
 + (void)performInUserInteractiveGlobalQueue:(dispatch_block_t)performance;
+/**
+ 在调度队列上提交一个异步执行、优先级为 QOS_CLASS_UTILITY 的 block, 并且立即返回
+
+ @param performance 要提交到目标调度队列的 block, 此参数不能为 NULL
+ */
 + (void)performInUtilityGlobalQueue:(dispatch_block_t)performance;
 + (void)performInBackgroundGlobalQueue:(dispatch_block_t)performance;
 + (void)performInUserInitiatedGlobalQueue:(dispatch_block_t)performance;
