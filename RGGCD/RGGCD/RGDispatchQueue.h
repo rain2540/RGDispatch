@@ -52,9 +52,9 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 + (RGDispatchQueue *)defaultGlobalQueue;
 
 /**
- *  返回优先级为 QOS_CLASS_USER_INITIATED: DISPATCH_QUEUE_PRIORITY_HIGH 的队列
+ *  返回优先级为 QOS_CLASS_USER_INTERACTIVE: DISPATCH_QUEUE_PRIORITY_HIGH 的队列
  *
- *  @return 优先级为 QOS_CLASS_USER_INITIATED 的队列
+ *  @return 优先级为 QOS_CLASS_USER_INTERACTIVE 的队列
  */
 + (RGDispatchQueue *)userInteractiveGlobalQueue;
 
@@ -108,7 +108,7 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
  */
 + (void)performInDefaultGlobalQueue:(dispatch_block_t)performance;
 /**
- 在调度队列上提交一个异步执行、优先级为 QOS_CLASS_USER_INITIATED 的 block, 并且立即返回
+ 在调度队列上提交一个异步执行、优先级为 QOS_CLASS_USER_INTERACTIVE 的 block, 并且立即返回
 
  @param performance 要提交到目标调度队列的 block, 此参数不能为 NULL
  */
@@ -165,6 +165,12 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
  */
 + (void)performInDefaultGlobalQueueDelay:(int64_t)seconds performance:(dispatch_block_t)performance;
 
+/**
+ 在调度队列上提交一个在指定时间间隔、异步执行、优先级为 QOS_CLASS_USER_INTERACTIVE 的 block
+
+ @param seconds 指定的时间间隔
+ @param performance 要提交到目标调度队列的 block, 此参数不能为 NULL
+ */
 + (void)performInUserInteractiveGlobalQueueDelay:(int64_t)seconds performance:(dispatch_block_t)performance;
 
 + (void)performInUtilityGlobalQueueDelay:(int64_t)seconds performance:(dispatch_block_t)performance;
