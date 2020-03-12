@@ -56,6 +56,10 @@ static RGDispatchQueue *unspecifiedGlobalQueue;
     return [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeConcurrent];
 }
 
++ (instancetype)serialQueue {
+    return [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeSerial];
+}
+
 
 #pragma mark - Queues
 + (RGDispatchQueue *)mainQueue {

@@ -35,6 +35,7 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 - (instancetype)init;
 - (instancetype)initWithQueueType:(DispatchQueueType)queueType;
 + (instancetype)concurrentQueue;
++ (instancetype)serialQueue;
 
 
 #pragma mark - Queues
