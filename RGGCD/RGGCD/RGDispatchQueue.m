@@ -25,7 +25,7 @@ static RGDispatchQueue *unspecifiedGlobalQueue;
 #pragma mark -
 @implementation RGDispatchQueue
 
-#pragma mark - Initializer
+#pragma mark Initializer
 - (instancetype)init {
     if (self == [super init]) {
         self.dispatchQueue = dispatch_queue_create(nil, DISPATCH_QUEUE_CONCURRENT);
@@ -50,6 +50,10 @@ static RGDispatchQueue *unspecifiedGlobalQueue;
         }
     }
     return self;
+}
+
++ (instancetype)concurrentQueue {
+    return [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeConcurrent];
 }
 
 
