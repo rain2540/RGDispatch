@@ -34,6 +34,8 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 #pragma mark - Initializer
 
 - (instancetype)initWithQueueType:(DispatchQueueType)queueType;
+- (instancetype)initWithLabel:(const char *)label
+                    queueType:(DispatchQueueType)queueType;
 + (instancetype)concurrentQueue;
 + (instancetype)serialQueue;
 

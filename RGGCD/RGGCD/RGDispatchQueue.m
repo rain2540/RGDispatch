@@ -46,6 +46,32 @@ static RGDispatchQueue *unspecifiedGlobalQueue;
     return self;
 }
 
+- (instancetype)initWithLabel:(const char *)label
+                    queueType:(DispatchQueueType)queueType
+{
+    self = [super init];
+    if (self) {
+        switch (queueType) {
+            case DispatchQueueTypeConcurrent:
+                self.dispatchQueue = dispatch_queue_create(label, DISPATCH_QUEUE_CONCURRENT);
+                break;
+                
+            case DispatchQueueTypeSerial:
+                self.dispatchQueue = dispatch_queue_create(label, DISPATCH_QUEUE_SERIAL);
+                break;
+                
+            case DispatchQueueTypeNone:
+                self.dispatchQueue = nil;
+                break;
+                
+            default:
+                break;
+        }
+        
+    }
+    return self;
+}
+
 + (instancetype)concurrentQueue {
     return [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeConcurrent];
 }
