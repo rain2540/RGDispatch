@@ -28,6 +28,8 @@ static RGDispatchQueue *unspecifiedGlobalQueue;
 #pragma mark Initializer
 
 - (instancetype)initWithQueueType:(DispatchQueueType)queueType {
+    return [[RGDispatchQueue alloc] initWithLabel:nil queueType:queueType];
+    /*
     if (self == [super init]) {
         switch (queueType) {
             case DispatchQueueTypeConcurrent:
@@ -44,6 +46,7 @@ static RGDispatchQueue *unspecifiedGlobalQueue;
         }
     }
     return self;
+    */
 }
 
 - (instancetype)initWithLabel:(const char *)label
