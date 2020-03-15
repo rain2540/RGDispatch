@@ -36,11 +36,14 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 - (instancetype)initWithLabel:(const char *)label
                     queueType:(DispatchQueueType)queueType;
 - (instancetype)initWithQueueType:(DispatchQueueType)queueType;
-+ (instancetype)concurrentQueue;
-+ (instancetype)serialQueue;
 
 
 #pragma mark - Queues
+
++ (instancetype)concurrentQueue;
+
++ (instancetype)serialQueue;
+
 /**
  *  返回主线程队列
  *
@@ -92,6 +95,7 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 
 
 #pragma mark - Performance
+
 /**
  在调度队列上提交一个异步执行的 block, 并且立即返回
  
@@ -144,6 +148,7 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 
 
 #pragma mark - Performance Delay
+
 /**
  *  在指定时间间隔执行的 block
  *

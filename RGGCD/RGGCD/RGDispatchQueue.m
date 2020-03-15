@@ -75,6 +75,9 @@ static RGDispatchQueue *unspecifiedGlobalQueue;
     */
 }
 
+
+#pragma mark - Queues
+
 + (instancetype)concurrentQueue {
     return [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeConcurrent];
 }
@@ -83,8 +86,6 @@ static RGDispatchQueue *unspecifiedGlobalQueue;
     return [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeSerial];
 }
 
-
-#pragma mark - Queues
 + (RGDispatchQueue *)mainQueue {
     mainQueue = [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeNone];
     mainQueue.dispatchQueue = dispatch_get_main_queue();
@@ -129,6 +130,7 @@ static RGDispatchQueue *unspecifiedGlobalQueue;
 
 
 #pragma mark - Performance
+
 - (void)perform:(dispatch_block_t)performance {
     dispatch_async(self.dispatchQueue, performance);
 }
@@ -163,6 +165,7 @@ static RGDispatchQueue *unspecifiedGlobalQueue;
 
 
 #pragma mark - Performance Delay
+
 - (void)performDelay:(int64_t)seconds
          performance:(dispatch_block_t)performance
 {
