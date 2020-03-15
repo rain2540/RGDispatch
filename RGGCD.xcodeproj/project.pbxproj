@@ -140,10 +140,9 @@
 			};
 			buildConfigurationList = B755C60E1CBB3D3400D06428 /* Build configuration list for PBXProject "RGGCD" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
