@@ -10,7 +10,7 @@
 
 /**
  队列类型
-
+ 
  - DispatchQueueTypeConcurrent: 并行队列
  - DispatchQueueTypeSerial: 串行队列
  - DispatchQueueTypeNone: 不指定类型
@@ -33,9 +33,9 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 
 #pragma mark - Initializer
 
-- (instancetype)initWithQueueType:(DispatchQueueType)queueType;
 - (instancetype)initWithLabel:(const char *)label
                     queueType:(DispatchQueueType)queueType;
+- (instancetype)initWithQueueType:(DispatchQueueType)queueType;
 + (instancetype)concurrentQueue;
 + (instancetype)serialQueue;
 
@@ -94,50 +94,50 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 #pragma mark - Performance
 /**
  在调度队列上提交一个异步执行的 block, 并且立即返回
-
+ 
  @param performance 要提交到目标调度队列的 block, 此参数不能为 NULL
  */
 - (void)perform:(dispatch_block_t)performance;
 
 /**
  在主线程队列上提交一个异步执行的 block, 并且立即返回
-
+ 
  @param performance 要提交到主线程队列的 block, 此参数不能为 NULL
  */
 + (void)performInMainQueue:(dispatch_block_t)performance;
 /**
  在调度队列上提交一个异步执行、优先级为 QOS_CLASS_DEFAULT 的 block, 并且立即返回
-
+ 
  @param performance 要提交到目标调度队列的 block, 此参数不能为 NULL
  */
 + (void)performInDefaultGlobalQueue:(dispatch_block_t)performance;
 /**
  在调度队列上提交一个异步执行、优先级为 QOS_CLASS_USER_INTERACTIVE 的 block, 并且立即返回
-
+ 
  @param performance 要提交到目标调度队列的 block, 此参数不能为 NULL
  */
 + (void)performInUserInteractiveGlobalQueue:(dispatch_block_t)performance;
 /**
  在调度队列上提交一个异步执行、优先级为 QOS_CLASS_UTILITY 的 block, 并且立即返回
-
+ 
  @param performance 要提交到目标调度队列的 block, 此参数不能为 NULL
  */
 + (void)performInUtilityGlobalQueue:(dispatch_block_t)performance;
 /**
  在调度队列上提交一个异步执行、优先级为 QOS_CLASS_BACKGROUND 的 block, 并且立即返回
-
+ 
  @param performance 要提交到目标调度队列的 block, 此参数不能为 NULL
  */
 + (void)performInBackgroundGlobalQueue:(dispatch_block_t)performance;
 /**
  在调度队列上提交一个异步执行、优先级为 QOS_CLASS_USER_INITIATED 的 block, 并且立即返回
-
+ 
  @param performance 要提交到目标调度队列的 block, 此参数不能为 NULL
  */
 + (void)performInUserInitiatedGlobalQueue:(dispatch_block_t)performance;
 /**
  在调度队列上提交一个异步执行、优先级为 QOS_CLASS_UNSPECIFIED 的 block, 并且立即返回
-
+ 
  @param performance 要提交到目标调度队列的 block, 此参数不能为 NULL
  */
 + (void)performInUnspecifiedGlobalQueue:(dispatch_block_t)performance;
@@ -155,7 +155,7 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 
 /**
  在主线程队列上提交一个在指定时间间隔、异步执行的 block
-
+ 
  @param seconds 指定的时间间隔
  @param performance 要提交到主线程队列的 block, 此参数不能为 NULL
  */
@@ -163,7 +163,7 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 
 /**
  在调度队列上提交一个在指定时间间隔、异步执行、优先级为 QOS_CLASS_DEFAULT 的 block
-
+ 
  @param seconds 指定的时间间隔
  @param performance 要提交到目标调度队列的 block, 此参数不能为 NULL
  */
@@ -171,7 +171,7 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 
 /**
  在调度队列上提交一个在指定时间间隔、异步执行、优先级为 QOS_CLASS_USER_INTERACTIVE 的 block
-
+ 
  @param seconds 指定的时间间隔
  @param performance 要提交到目标调度队列的 block, 此参数不能为 NULL
  */
@@ -179,7 +179,7 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 
 /**
  在调度队列上提交一个在指定时间间隔、异步执行、优先级为 QOS_CLASS_UTILITY 的 block
-
+ 
  @param seconds 指定的时间间隔
  @param performance 要提交到目标调度队列的 block, 此参数不能为 NULL
  */
