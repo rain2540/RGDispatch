@@ -206,6 +206,9 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 
 - (void)sync:(dispatch_block_t)performance;
 
+- (void)after:(int64_t)delta
+      perform:(dispatch_block_t)perform;
+
 @end
 
 

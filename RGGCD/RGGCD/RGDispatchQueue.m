@@ -230,6 +230,13 @@ static RGDispatchQueue *unspecifiedGlobalQueue;
     dispatch_sync(self.dispatchQueue, performance);
 }
 
+- (void)after:(int64_t)delta
+      perform:(dispatch_block_t)perform
+{
+    dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, delta);
+    dispatch_after(time, self.dispatchQueue, perform);
+}
+
 @end
 
 
