@@ -188,31 +188,31 @@ static RGDispatchQueue *GlobalQueueUnspecified;
 }
 
 + (void)performInMainQueue:(dispatch_block_t)performance {
-    [[RGDispatchQueue mainQueue] perform:performance];
+    [[RGDispatchQueue mainQueue] async:performance];
 }
 
 + (void)performInDefaultGlobalQueue:(dispatch_block_t)performance {
-    [[RGDispatchQueue defaultGlobalQueue] perform:performance];
+    [[RGDispatchQueue globalQueueDefault] async:performance];
 }
 
 + (void)performInUserInteractiveGlobalQueue:(dispatch_block_t)performance {
-    [[RGDispatchQueue userInteractiveGlobalQueue] perform:performance];
+    [[RGDispatchQueue globalQueueUserInteractive] async:performance];
 }
 
 + (void)performInUtilityGlobalQueue:(dispatch_block_t)performance {
-    [[RGDispatchQueue utilityGlobalQueue] perform:performance];
+    [[RGDispatchQueue globalQueueUtility] async:performance];
 }
 
 + (void)performInBackgroundGlobalQueue:(dispatch_block_t)performance {
-    [[RGDispatchQueue backgroundGlobalQueue] perform:performance];
+    [[RGDispatchQueue globalQueueBackground] async:performance];
 }
 
 + (void)performInUserInitiatedGlobalQueue:(dispatch_block_t)performance {
-    [[RGDispatchQueue userInitiatedGlobalQueue] perform:performance];
+    [[RGDispatchQueue globalQueueUserInitiated] async:performance];
 }
 
 + (void)performInUnspecifiedGlobalQueue:(dispatch_block_t)performance {
-    [[RGDispatchQueue unspecifiedGlobalQueue] perform:performance];
+    [[RGDispatchQueue globalQueueUnspecified] async:performance];
 }
 
 
@@ -234,37 +234,37 @@ static RGDispatchQueue *GlobalQueueUnspecified;
 + (void)performInDefaultGlobalQueueDelay:(int64_t)seconds
                              performance:(dispatch_block_t)performance
 {
-    [[RGDispatchQueue mainQueue] performDelay:seconds performance:performance];
+    [[RGDispatchQueue globalQueueDefault] performDelay:seconds performance:performance];
 }
 
 + (void)performInUserInteractiveGlobalQueueDelay:(int64_t)seconds
                                      performance:(dispatch_block_t)performance
 {
-    [[RGDispatchQueue userInteractiveGlobalQueue] performDelay:seconds performance:performance];
+    [[RGDispatchQueue globalQueueUserInteractive] performDelay:seconds performance:performance];
 }
 
 + (void)performInUtilityGlobalQueueDelay:(int64_t)seconds
                              performance:(dispatch_block_t)performance
 {
-    [[RGDispatchQueue utilityGlobalQueue] performDelay:seconds performance:performance];
+    [[RGDispatchQueue globalQueueUtility] performDelay:seconds performance:performance];
 }
 
 + (void)performInBackgroundGlobalQueueDelay:(int64_t)seconds
                                 performance:(dispatch_block_t)performance
 {
-    [[RGDispatchQueue backgroundGlobalQueue] performDelay:seconds performance:performance];
+    [[RGDispatchQueue globalQueueBackground] performDelay:seconds performance:performance];
 }
 
 + (void)performInUserInitiatedGlobalQueueDelay:(int64_t)seconds
                                    performance:(dispatch_block_t)performance
 {
-    [[RGDispatchQueue userInitiatedGlobalQueue] performDelay:seconds performance:performance];
+    [[RGDispatchQueue globalQueueUserInitiated] performDelay:seconds performance:performance];
 }
 
 + (void)performInUnspecifiedGlobalQueueDelay:(int64_t)seconds
                                  performance:(dispatch_block_t)performance
 {
-    [[RGDispatchQueue unspecifiedGlobalQueue] performDelay:seconds performance:performance];
+    [[RGDispatchQueue globalQueueUnspecified] performDelay:seconds performance:performance];
 }
 
 @end
