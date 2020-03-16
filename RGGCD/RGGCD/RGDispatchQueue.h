@@ -26,19 +26,109 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 
 
 #pragma mark -
+
 @interface RGDispatchQueue : NSObject
 
 @property (nonatomic, readonly, strong) dispatch_queue_t dispatchQueue;
 
 
-#pragma mark - Initializer
+#pragma mark - Lifecycle
 
 - (instancetype)initWithLabel:(const char *)label
                     queueType:(DispatchQueueType)queueType;
 - (instancetype)initWithQueueType:(DispatchQueueType)queueType;
 
+@end
 
-#pragma mark - Performance
+
+#pragma mark - Queues
+
+@interface RGDispatchQueue (Queues)
+
++ (instancetype)concurrentQueue;
+
++ (instancetype)serialQueue;
+
+/**
+ *  返回主线程队列
+ *
+ *  @return 主线程队列
+ */
++ (RGDispatchQueue *)mainQueue;
+
+/**
+ *  返回优先级为 QOS_CLASS_DEFAULT: DISPATCH_QUEUE_PRIORITY_DEFAULT 的队列
+ *
+ *  @return 优先级为 QOS_CLASS_DEFAULT 的队列
+ */
++ (RGDispatchQueue *)defaultGlobalQueue;
+
+/**
+ *  返回优先级为 QOS_CLASS_USER_INTERACTIVE: DISPATCH_QUEUE_PRIORITY_HIGH 的队列
+ *
+ *  @return 优先级为 QOS_CLASS_USER_INTERACTIVE 的队列
+ */
++ (RGDispatchQueue *)userInteractiveGlobalQueue;
+
+/**
+ *  返回优先级为 QOS_CLASS_UTILITY: DISPATCH_QUEUE_PRIORITY_LOW 的队列
+ *
+ *  @return 优先级为 QOS_CLASS_UTILITY 的队列
+ */
++ (RGDispatchQueue *)utilityGlobalQueue;
+
+/**
+ *  返回优先级为 QOS_CLASS_BACKGROUND: DISPATCH_QUEUE_PRIORITY_BACKGROUND 的队列
+ *
+ *  @return 优先级为 QOS_CLASS_BACKGROUND 的队列
+ */
++ (RGDispatchQueue *)backgroundGlobalQueue;
+
+/**
+ *  返回优先级为 QOS_CLASS_USER_INITIATED 的队列
+ *
+ *  @return 优先级为 QOS_CLASS_USER_INITIATED 的队列
+ */
++ (RGDispatchQueue *)userInitiatedGlobalQueue;
+
+/**
+ *  返回优先级为 QOS_CLASS_UNSPECIFIED 的队列
+ *
+ *  @return 优先级为 QOS_CLASS_UNSPECIFIED 的队列
+ */
++ (RGDispatchQueue *)unspecifiedGlobalQueue;
+
+@end
+
+
+#pragma mark - Perform
+
+@interface RGDispatchQueue (Perform)
+
+/// 在调度队列上提交一个异步执行的 block, 并且立即返回
+/// @param performance 要提交到目标调度队列的 block, 此参数不能为 NULL
+- (void)async:(dispatch_block_t)perform;
+
+- (void)sync:(dispatch_block_t)perform;
+
+- (void)after:(int64_t)delta
+      perform:(dispatch_block_t)perform;
+
+@end
+
+
+#pragma mark - Deprecated
+
+@interface RGDispatchQueue (Deprecated)
+
+#pragma mark Performance
+
+/**
+ 在调度队列上提交一个异步执行的 block, 并且立即返回
+ 
+ @param performance 要提交到目标调度队列的 block, 此参数不能为 NULL
+ */
+- (void)perform:(dispatch_block_t)performance DEPRECATED_MSG_ATTRIBUTE("Use -async: instead");
 
 /**
  在主线程队列上提交一个异步执行的 block, 并且立即返回
@@ -132,95 +222,5 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 + (void)performInUserInitiatedGlobalQueueDelay:(int64_t)seconds performance:(dispatch_block_t)performance;
 
 + (void)performInUnspecifiedGlobalQueueDelay:(int64_t)seconds performance:(dispatch_block_t)performance;
-
-@end
-
-
-#pragma mark - Queues
-
-@interface RGDispatchQueue (Queues)
-
-+ (instancetype)concurrentQueue;
-
-+ (instancetype)serialQueue;
-
-/**
- *  返回主线程队列
- *
- *  @return 主线程队列
- */
-+ (RGDispatchQueue *)mainQueue;
-
-/**
- *  返回优先级为 QOS_CLASS_DEFAULT: DISPATCH_QUEUE_PRIORITY_DEFAULT 的队列
- *
- *  @return 优先级为 QOS_CLASS_DEFAULT 的队列
- */
-+ (RGDispatchQueue *)defaultGlobalQueue;
-
-/**
- *  返回优先级为 QOS_CLASS_USER_INTERACTIVE: DISPATCH_QUEUE_PRIORITY_HIGH 的队列
- *
- *  @return 优先级为 QOS_CLASS_USER_INTERACTIVE 的队列
- */
-+ (RGDispatchQueue *)userInteractiveGlobalQueue;
-
-/**
- *  返回优先级为 QOS_CLASS_UTILITY: DISPATCH_QUEUE_PRIORITY_LOW 的队列
- *
- *  @return 优先级为 QOS_CLASS_UTILITY 的队列
- */
-+ (RGDispatchQueue *)utilityGlobalQueue;
-
-/**
- *  返回优先级为 QOS_CLASS_BACKGROUND: DISPATCH_QUEUE_PRIORITY_BACKGROUND 的队列
- *
- *  @return 优先级为 QOS_CLASS_BACKGROUND 的队列
- */
-+ (RGDispatchQueue *)backgroundGlobalQueue;
-
-/**
- *  返回优先级为 QOS_CLASS_USER_INITIATED 的队列
- *
- *  @return 优先级为 QOS_CLASS_USER_INITIATED 的队列
- */
-+ (RGDispatchQueue *)userInitiatedGlobalQueue;
-
-/**
- *  返回优先级为 QOS_CLASS_UNSPECIFIED 的队列
- *
- *  @return 优先级为 QOS_CLASS_UNSPECIFIED 的队列
- */
-+ (RGDispatchQueue *)unspecifiedGlobalQueue;
-
-@end
-
-
-#pragma mark - Perform
-
-@interface RGDispatchQueue (Perform)
-
-/// 在调度队列上提交一个异步执行的 block, 并且立即返回
-/// @param performance 要提交到目标调度队列的 block, 此参数不能为 NULL
-- (void)async:(dispatch_block_t)perform;
-
-- (void)sync:(dispatch_block_t)perform;
-
-- (void)after:(int64_t)delta
-      perform:(dispatch_block_t)perform;
-
-@end
-
-
-#pragma mark - Deprecated
-
-@interface RGDispatchQueue (Deprecated)
-
-/**
- 在调度队列上提交一个异步执行的 block, 并且立即返回
- 
- @param performance 要提交到目标调度队列的 block, 此参数不能为 NULL
- */
-- (void)perform:(dispatch_block_t)performance DEPRECATED_MSG_ATTRIBUTE("Use -async: instead");
 
 @end
