@@ -197,8 +197,7 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
  *  @param seconds     指定的时间间隔
  *  @param performance 要提交的 block, 此参数不能为 NULL
  */
-- (void)performDelay:(int64_t)seconds
-         performance:(dispatch_block_t)performance;
+- (void)performDelay:(int64_t)seconds performance:(dispatch_block_t)performance DEPRECATED_MSG_ATTRIBUTE("Use -after:perform: instead");
 
 /**
  在主线程队列上提交一个在指定时间间隔、异步执行的 block

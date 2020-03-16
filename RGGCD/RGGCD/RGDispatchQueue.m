@@ -228,43 +228,43 @@ static RGDispatchQueue *GlobalQueueUnspecified;
 + (void)performInMainQueueDelay:(int64_t)seconds
                     performance:(dispatch_block_t)performance
 {
-    [[RGDispatchQueue mainQueue] performDelay:seconds performance:performance];
+    [[RGDispatchQueue mainQueue] after:seconds perform:performance];
 }
 
 + (void)performInDefaultGlobalQueueDelay:(int64_t)seconds
                              performance:(dispatch_block_t)performance
 {
-    [[RGDispatchQueue globalQueueDefault] performDelay:seconds performance:performance];
+    [[RGDispatchQueue globalQueueDefault] after:seconds perform:performance];
 }
 
 + (void)performInUserInteractiveGlobalQueueDelay:(int64_t)seconds
                                      performance:(dispatch_block_t)performance
 {
-    [[RGDispatchQueue globalQueueUserInteractive] performDelay:seconds performance:performance];
+    [[RGDispatchQueue globalQueueUserInteractive] after:seconds perform:performance];
 }
 
 + (void)performInUtilityGlobalQueueDelay:(int64_t)seconds
                              performance:(dispatch_block_t)performance
 {
-    [[RGDispatchQueue globalQueueUtility] performDelay:seconds performance:performance];
+    [[RGDispatchQueue globalQueueUtility] after:seconds perform:performance];
 }
 
 + (void)performInBackgroundGlobalQueueDelay:(int64_t)seconds
                                 performance:(dispatch_block_t)performance
 {
-    [[RGDispatchQueue globalQueueBackground] performDelay:seconds performance:performance];
+    [[RGDispatchQueue globalQueueBackground] after:seconds perform:performance];
 }
 
 + (void)performInUserInitiatedGlobalQueueDelay:(int64_t)seconds
                                    performance:(dispatch_block_t)performance
 {
-    [[RGDispatchQueue globalQueueUserInitiated] performDelay:seconds performance:performance];
+    [[RGDispatchQueue globalQueueUserInitiated] after:seconds perform:performance];
 }
 
 + (void)performInUnspecifiedGlobalQueueDelay:(int64_t)seconds
                                  performance:(dispatch_block_t)performance
 {
-    [[RGDispatchQueue globalQueueUnspecified] performDelay:seconds performance:performance];
+    [[RGDispatchQueue globalQueueUnspecified] after:seconds perform:performance];
 }
 
 @end
