@@ -204,6 +204,8 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 /// @param performance 要提交到目标调度队列的 block, 此参数不能为 NULL
 - (void)async:(dispatch_block_t)performance;
 
+- (void)sync:(dispatch_block_t)performance;
+
 @end
 
 

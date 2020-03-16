@@ -226,6 +226,10 @@ static RGDispatchQueue *unspecifiedGlobalQueue;
     dispatch_async(self.dispatchQueue, performance);
 }
 
+- (void)sync:(dispatch_block_t)performance {
+    dispatch_sync(self.dispatchQueue, performance);
+}
+
 @end
 
 
