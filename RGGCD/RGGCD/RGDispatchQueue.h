@@ -99,13 +99,6 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 - (void)async:(dispatch_block_t)performance;
 
 /**
- 在调度队列上提交一个异步执行的 block, 并且立即返回
- 
- @param performance 要提交到目标调度队列的 block, 此参数不能为 NULL
- */
-- (void)perform:(dispatch_block_t)performance;
-
-/**
  在主线程队列上提交一个异步执行的 block, 并且立即返回
  
  @param performance 要提交到主线程队列的 block, 此参数不能为 NULL
@@ -197,5 +190,17 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 + (void)performInUserInitiatedGlobalQueueDelay:(int64_t)seconds performance:(dispatch_block_t)performance;
 
 + (void)performInUnspecifiedGlobalQueueDelay:(int64_t)seconds performance:(dispatch_block_t)performance;
+
+@end
+
+
+@interface RGDispatchQueue (Deprecated)
+
+/**
+ 在调度队列上提交一个异步执行的 block, 并且立即返回
+ 
+ @param performance 要提交到目标调度队列的 block, 此参数不能为 NULL
+ */
+- (void)perform:(dispatch_block_t)performance DEPRECATED_MSG_ATTRIBUTE("Use -async: instead");
 
 @end
