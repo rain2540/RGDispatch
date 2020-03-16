@@ -38,62 +38,6 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 - (instancetype)initWithQueueType:(DispatchQueueType)queueType;
 
 
-#pragma mark - Queues
-
-+ (instancetype)concurrentQueue;
-
-+ (instancetype)serialQueue;
-
-/**
- *  返回主线程队列
- *
- *  @return 主线程队列
- */
-+ (RGDispatchQueue *)mainQueue;
-
-/**
- *  返回优先级为 QOS_CLASS_DEFAULT: DISPATCH_QUEUE_PRIORITY_DEFAULT 的队列
- *
- *  @return 优先级为 QOS_CLASS_DEFAULT 的队列
- */
-+ (RGDispatchQueue *)defaultGlobalQueue;
-
-/**
- *  返回优先级为 QOS_CLASS_USER_INTERACTIVE: DISPATCH_QUEUE_PRIORITY_HIGH 的队列
- *
- *  @return 优先级为 QOS_CLASS_USER_INTERACTIVE 的队列
- */
-+ (RGDispatchQueue *)userInteractiveGlobalQueue;
-
-/**
- *  返回优先级为 QOS_CLASS_UTILITY: DISPATCH_QUEUE_PRIORITY_LOW 的队列
- *
- *  @return 优先级为 QOS_CLASS_UTILITY 的队列
- */
-+ (RGDispatchQueue *)utilityGlobalQueue;
-
-/**
- *  返回优先级为 QOS_CLASS_BACKGROUND: DISPATCH_QUEUE_PRIORITY_BACKGROUND 的队列
- *
- *  @return 优先级为 QOS_CLASS_BACKGROUND 的队列
- */
-+ (RGDispatchQueue *)backgroundGlobalQueue;
-
-/**
- *  返回优先级为 QOS_CLASS_USER_INITIATED 的队列
- *
- *  @return 优先级为 QOS_CLASS_USER_INITIATED 的队列
- */
-+ (RGDispatchQueue *)userInitiatedGlobalQueue;
-
-/**
- *  返回优先级为 QOS_CLASS_UNSPECIFIED 的队列
- *
- *  @return 优先级为 QOS_CLASS_UNSPECIFIED 的队列
- */
-+ (RGDispatchQueue *)unspecifiedGlobalQueue;
-
-
 #pragma mark - Performance
 
 - (void)async:(dispatch_block_t)performance;
@@ -190,6 +134,66 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 + (void)performInUserInitiatedGlobalQueueDelay:(int64_t)seconds performance:(dispatch_block_t)performance;
 
 + (void)performInUnspecifiedGlobalQueueDelay:(int64_t)seconds performance:(dispatch_block_t)performance;
+
+@end
+
+
+#pragma mark - Queues
+
+@interface RGDispatchQueue (Queues)
+
++ (instancetype)concurrentQueue;
+
++ (instancetype)serialQueue;
+
+/**
+ *  返回主线程队列
+ *
+ *  @return 主线程队列
+ */
++ (RGDispatchQueue *)mainQueue;
+
+/**
+ *  返回优先级为 QOS_CLASS_DEFAULT: DISPATCH_QUEUE_PRIORITY_DEFAULT 的队列
+ *
+ *  @return 优先级为 QOS_CLASS_DEFAULT 的队列
+ */
++ (RGDispatchQueue *)defaultGlobalQueue;
+
+/**
+ *  返回优先级为 QOS_CLASS_USER_INTERACTIVE: DISPATCH_QUEUE_PRIORITY_HIGH 的队列
+ *
+ *  @return 优先级为 QOS_CLASS_USER_INTERACTIVE 的队列
+ */
++ (RGDispatchQueue *)userInteractiveGlobalQueue;
+
+/**
+ *  返回优先级为 QOS_CLASS_UTILITY: DISPATCH_QUEUE_PRIORITY_LOW 的队列
+ *
+ *  @return 优先级为 QOS_CLASS_UTILITY 的队列
+ */
++ (RGDispatchQueue *)utilityGlobalQueue;
+
+/**
+ *  返回优先级为 QOS_CLASS_BACKGROUND: DISPATCH_QUEUE_PRIORITY_BACKGROUND 的队列
+ *
+ *  @return 优先级为 QOS_CLASS_BACKGROUND 的队列
+ */
++ (RGDispatchQueue *)backgroundGlobalQueue;
+
+/**
+ *  返回优先级为 QOS_CLASS_USER_INITIATED 的队列
+ *
+ *  @return 优先级为 QOS_CLASS_USER_INITIATED 的队列
+ */
++ (RGDispatchQueue *)userInitiatedGlobalQueue;
+
+/**
+ *  返回优先级为 QOS_CLASS_UNSPECIFIED 的队列
+ *
+ *  @return 优先级为 QOS_CLASS_UNSPECIFIED 的队列
+ */
++ (RGDispatchQueue *)unspecifiedGlobalQueue;
 
 @end
 

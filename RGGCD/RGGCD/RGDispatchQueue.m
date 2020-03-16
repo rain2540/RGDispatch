@@ -76,59 +76,6 @@ static RGDispatchQueue *unspecifiedGlobalQueue;
 }
 
 
-#pragma mark - Queues
-
-+ (instancetype)concurrentQueue {
-    return [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeConcurrent];
-}
-
-+ (instancetype)serialQueue {
-    return [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeSerial];
-}
-
-+ (RGDispatchQueue *)mainQueue {
-    mainQueue = [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeNone];
-    mainQueue.dispatchQueue = dispatch_get_main_queue();
-    return mainQueue;
-}
-
-+ (RGDispatchQueue *)defaultGlobalQueue {
-    defaultGlobalQueue = [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeNone];
-    defaultGlobalQueue.dispatchQueue = dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0);
-    return defaultGlobalQueue;
-}
-
-+ (RGDispatchQueue *)userInteractiveGlobalQueue {
-    userInteractiveGlobalQueue = [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeNone];
-    userInteractiveGlobalQueue.dispatchQueue = dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0);
-    return userInteractiveGlobalQueue;
-}
-
-+ (RGDispatchQueue *)utilityGlobalQueue {
-    utilityGlobalQueue = [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeNone];
-    utilityGlobalQueue.dispatchQueue = dispatch_get_global_queue(QOS_CLASS_UTILITY, 0);
-    return utilityGlobalQueue;
-}
-
-+ (RGDispatchQueue *)backgroundGlobalQueue {
-    backgroundGlobalQueue = [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeNone];
-    backgroundGlobalQueue.dispatchQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0);
-    return backgroundGlobalQueue;
-}
-
-+ (RGDispatchQueue *)userInitiatedGlobalQueue {
-    userInitiatedGlobalQueue = [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeNone];
-    userInitiatedGlobalQueue.dispatchQueue = dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0);
-    return userInitiatedGlobalQueue;
-}
-
-+ (RGDispatchQueue *)unspecifiedGlobalQueue {
-    unspecifiedGlobalQueue = [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeNone];
-    unspecifiedGlobalQueue.dispatchQueue = dispatch_get_global_queue(QOS_CLASS_UNSPECIFIED, 0);
-    return unspecifiedGlobalQueue;
-}
-
-
 #pragma mark - Performance
 
 - (void)async:(dispatch_block_t)performance {
@@ -213,6 +160,63 @@ static RGDispatchQueue *unspecifiedGlobalQueue;
                                  performance:(dispatch_block_t)performance
 {
     [[RGDispatchQueue unspecifiedGlobalQueue] performDelay:seconds performance:performance];
+}
+
+@end
+
+
+#pragma mark - Queues
+
+@implementation RGDispatchQueue (Queues)
+
++ (instancetype)concurrentQueue {
+    return [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeConcurrent];
+}
+
++ (instancetype)serialQueue {
+    return [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeSerial];
+}
+
++ (RGDispatchQueue *)mainQueue {
+    mainQueue = [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeNone];
+    mainQueue.dispatchQueue = dispatch_get_main_queue();
+    return mainQueue;
+}
+
++ (RGDispatchQueue *)defaultGlobalQueue {
+    defaultGlobalQueue = [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeNone];
+    defaultGlobalQueue.dispatchQueue = dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0);
+    return defaultGlobalQueue;
+}
+
++ (RGDispatchQueue *)userInteractiveGlobalQueue {
+    userInteractiveGlobalQueue = [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeNone];
+    userInteractiveGlobalQueue.dispatchQueue = dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0);
+    return userInteractiveGlobalQueue;
+}
+
++ (RGDispatchQueue *)utilityGlobalQueue {
+    utilityGlobalQueue = [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeNone];
+    utilityGlobalQueue.dispatchQueue = dispatch_get_global_queue(QOS_CLASS_UTILITY, 0);
+    return utilityGlobalQueue;
+}
+
++ (RGDispatchQueue *)backgroundGlobalQueue {
+    backgroundGlobalQueue = [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeNone];
+    backgroundGlobalQueue.dispatchQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0);
+    return backgroundGlobalQueue;
+}
+
++ (RGDispatchQueue *)userInitiatedGlobalQueue {
+    userInitiatedGlobalQueue = [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeNone];
+    userInitiatedGlobalQueue.dispatchQueue = dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0);
+    return userInitiatedGlobalQueue;
+}
+
++ (RGDispatchQueue *)unspecifiedGlobalQueue {
+    unspecifiedGlobalQueue = [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeNone];
+    unspecifiedGlobalQueue.dispatchQueue = dispatch_get_global_queue(QOS_CLASS_UNSPECIFIED, 0);
+    return unspecifiedGlobalQueue;
 }
 
 @end
