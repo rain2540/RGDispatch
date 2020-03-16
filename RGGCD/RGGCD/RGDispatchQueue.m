@@ -56,24 +56,6 @@ static RGDispatchQueue *GlobalQueueUnspecified;
 
 - (instancetype)initWithQueueType:(DispatchQueueType)queueType {
     return [[RGDispatchQueue alloc] initWithLabel:nil queueType:queueType];
-    /*
-    if (self == [super init]) {
-        switch (queueType) {
-            case DispatchQueueTypeConcurrent:
-                self.dispatchQueue = dispatch_queue_create(nil, DISPATCH_QUEUE_CONCURRENT);
-                break;
-                
-            case DispatchQueueTypeSerial:
-                self.dispatchQueue = dispatch_queue_create(nil, DISPATCH_QUEUE_SERIAL);
-                break;
-                
-            case DispatchQueueTypeNone:
-                self.dispatchQueue = nil;
-                break;
-        }
-    }
-    return self;
-    */
 }
 
 @end
