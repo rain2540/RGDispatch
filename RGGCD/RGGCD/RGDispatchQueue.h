@@ -56,6 +56,43 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
  */
 + (RGDispatchQueue *)mainQueue;
 
++ (RGDispatchQueue *)globalQueueDefault;
+
++ (RGDispatchQueue *)globalQueueUserInteractive;
+
++ (RGDispatchQueue *)globalQueueUtility;
+
++ (RGDispatchQueue *)globalQueueBackground;
+
++ (RGDispatchQueue *)globalQueueUserInitiated;
+
++ (RGDispatchQueue *)globalQueueUnspecified;
+
+@end
+
+
+#pragma mark - Perform
+
+@interface RGDispatchQueue (Perform)
+
+/// 在调度队列上提交一个异步执行的 block, 并且立即返回
+/// @param performance 要提交到目标调度队列的 block, 此参数不能为 NULL
+- (void)async:(dispatch_block_t)perform;
+
+- (void)sync:(dispatch_block_t)perform;
+
+- (void)after:(int64_t)delta
+      perform:(dispatch_block_t)perform;
+
+@end
+
+
+#pragma mark - Deprecated
+
+@interface RGDispatchQueue (Deprecated)
+
+#pragma mark Queues
+
 /**
  *  返回优先级为 QOS_CLASS_DEFAULT: DISPATCH_QUEUE_PRIORITY_DEFAULT 的队列
  *
@@ -98,30 +135,8 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
  */
 + (RGDispatchQueue *)unspecifiedGlobalQueue;
 
-@end
 
-
-#pragma mark - Perform
-
-@interface RGDispatchQueue (Perform)
-
-/// 在调度队列上提交一个异步执行的 block, 并且立即返回
-/// @param performance 要提交到目标调度队列的 block, 此参数不能为 NULL
-- (void)async:(dispatch_block_t)perform;
-
-- (void)sync:(dispatch_block_t)perform;
-
-- (void)after:(int64_t)delta
-      perform:(dispatch_block_t)perform;
-
-@end
-
-
-#pragma mark - Deprecated
-
-@interface RGDispatchQueue (Deprecated)
-
-#pragma mark Performance
+#pragma mark - Performance
 
 /**
  在调度队列上提交一个异步执行的 block, 并且立即返回
