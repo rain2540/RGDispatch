@@ -218,16 +218,16 @@ static RGDispatchQueue *unspecifiedGlobalQueue;
 @end
 
 
-#pragma mark - Performances
+#pragma mark - Perform
 
-@implementation RGDispatchQueue (Performances)
+@implementation RGDispatchQueue (Perform)
 
-- (void)async:(dispatch_block_t)performance {
-    dispatch_async(self.dispatchQueue, performance);
+- (void)async:(dispatch_block_t)perform {
+    dispatch_async(self.dispatchQueue, perform);
 }
 
-- (void)sync:(dispatch_block_t)performance {
-    dispatch_sync(self.dispatchQueue, performance);
+- (void)sync:(dispatch_block_t)perform {
+    dispatch_sync(self.dispatchQueue, perform);
 }
 
 - (void)after:(int64_t)delta
