@@ -200,6 +200,8 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 
 @interface RGDispatchQueue (Performances)
 
+/// 在调度队列上提交一个异步执行的 block, 并且立即返回
+/// @param performance 要提交到目标调度队列的 block, 此参数不能为 NULL
 - (void)async:(dispatch_block_t)performance;
 
 @end
