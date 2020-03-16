@@ -96,6 +96,8 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 
 #pragma mark - Performance
 
+- (void)async:(dispatch_block_t)performance;
+
 /**
  在调度队列上提交一个异步执行的 block, 并且立即返回
  
