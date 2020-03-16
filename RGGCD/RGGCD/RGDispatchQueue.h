@@ -205,7 +205,7 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
  @param seconds 指定的时间间隔
  @param performance 要提交到主线程队列的 block, 此参数不能为 NULL
  */
-+ (void)performInMainQueueDelay:(int64_t)seconds performance:(dispatch_block_t)performance;
++ (void)performInMainQueueDelay:(int64_t)seconds performance:(dispatch_block_t)performance DEPRECATED_MSG_ATTRIBUTE("Use [[RGDispatchQueue mainQueue] after: perform:] instead");
 
 /**
  在调度队列上提交一个在指定时间间隔、异步执行、优先级为 QOS_CLASS_DEFAULT 的 block
@@ -213,7 +213,7 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
  @param seconds 指定的时间间隔
  @param performance 要提交到目标调度队列的 block, 此参数不能为 NULL
  */
-+ (void)performInDefaultGlobalQueueDelay:(int64_t)seconds performance:(dispatch_block_t)performance;
++ (void)performInDefaultGlobalQueueDelay:(int64_t)seconds performance:(dispatch_block_t)performance DEPRECATED_MSG_ATTRIBUTE("Use [[RGDispatchQueue globalQueueDefault] after: perform:] instead");
 
 /**
  在调度队列上提交一个在指定时间间隔、异步执行、优先级为 QOS_CLASS_USER_INTERACTIVE 的 block
@@ -221,7 +221,7 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
  @param seconds 指定的时间间隔
  @param performance 要提交到目标调度队列的 block, 此参数不能为 NULL
  */
-+ (void)performInUserInteractiveGlobalQueueDelay:(int64_t)seconds performance:(dispatch_block_t)performance;
++ (void)performInUserInteractiveGlobalQueueDelay:(int64_t)seconds performance:(dispatch_block_t)performance DEPRECATED_MSG_ATTRIBUTE("Use [[RGDispatchQueue globalQueueUserInteractive] after: perform:] instead");
 
 /**
  在调度队列上提交一个在指定时间间隔、异步执行、优先级为 QOS_CLASS_UTILITY 的 block
@@ -229,12 +229,12 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
  @param seconds 指定的时间间隔
  @param performance 要提交到目标调度队列的 block, 此参数不能为 NULL
  */
-+ (void)performInUtilityGlobalQueueDelay:(int64_t)seconds performance:(dispatch_block_t)performance;
++ (void)performInUtilityGlobalQueueDelay:(int64_t)seconds performance:(dispatch_block_t)performance DEPRECATED_MSG_ATTRIBUTE("Use [[RGDispatchQueue globalQueueUtility] after: perform:] instead");
 
-+ (void)performInBackgroundGlobalQueueDelay:(int64_t)seconds performance:(dispatch_block_t)performance;
++ (void)performInBackgroundGlobalQueueDelay:(int64_t)seconds performance:(dispatch_block_t)performance DEPRECATED_MSG_ATTRIBUTE("Use [[RGDispatchQueue globalQueueBackground] after: perform:] instead");
 
-+ (void)performInUserInitiatedGlobalQueueDelay:(int64_t)seconds performance:(dispatch_block_t)performance;
++ (void)performInUserInitiatedGlobalQueueDelay:(int64_t)seconds performance:(dispatch_block_t)performance DEPRECATED_MSG_ATTRIBUTE("Use [[RGDispatchQueue globalQueueUserInitiated] after: perform:] instead");
 
-+ (void)performInUnspecifiedGlobalQueueDelay:(int64_t)seconds performance:(dispatch_block_t)performance;
++ (void)performInUnspecifiedGlobalQueueDelay:(int64_t)seconds performance:(dispatch_block_t)performance DEPRECATED_MSG_ATTRIBUTE("Use [[RGDispatchQueue globalQueueUnspecified] after: perform:] instead");
 
 @end
