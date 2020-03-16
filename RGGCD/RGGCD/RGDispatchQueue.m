@@ -78,10 +78,6 @@ static RGDispatchQueue *unspecifiedGlobalQueue;
 
 #pragma mark - Performance
 
-- (void)async:(dispatch_block_t)performance {
-    dispatch_async(self.dispatchQueue, performance);
-}
-
 + (void)performInMainQueue:(dispatch_block_t)performance {
     [[RGDispatchQueue mainQueue] perform:performance];
 }
@@ -221,6 +217,19 @@ static RGDispatchQueue *unspecifiedGlobalQueue;
 
 @end
 
+
+#pragma mark - Performances
+
+@implementation RGDispatchQueue (Performances)
+
+- (void)async:(dispatch_block_t)performance {
+    dispatch_async(self.dispatchQueue, performance);
+}
+
+@end
+
+
+#pragma mark - Deprecated
 
 @implementation RGDispatchQueue (Deprecated)
 
