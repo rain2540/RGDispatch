@@ -73,6 +73,15 @@ static RGDispatchQueue *GlobalQueueUnspecified;
     return [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeSerial];
 }
 
++ (instancetype)sharedConcurrentQueue {
+    static RGDispatchQueue * sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [RGDispatchQueue concurrentQueue];
+    });
+    return sharedInstance;
+}
+
 + (RGDispatchQueue *)mainQueue {
     MainQueue = [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeNone];
     MainQueue.dispatchQueue = dispatch_get_main_queue();
