@@ -1,6 +1,6 @@
 //
 //  ViewController.h
-//  RGGCD
+//  RGDispatch
 //
 //  Created by RAIN on 16/4/11.
 //  Copyright © 2016年 Smartech. All rights reserved.

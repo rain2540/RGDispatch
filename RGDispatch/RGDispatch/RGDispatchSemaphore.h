@@ -1,6 +1,6 @@
 //
 //  RGDispatchSemaphore.h
-//  RGGCD
+//  RGDispatch
 //
 //  Created by RAIN on 2019/6/19.
 //  Copyright © 2019 Smartech. All rights reserved.

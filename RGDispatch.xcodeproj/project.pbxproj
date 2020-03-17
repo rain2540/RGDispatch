@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B755C6131CBB3D3400D06428 /* RGGCD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RGGCD.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B755C6131CBB3D3400D06428 /* RGDispatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RGDispatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B755C6171CBB3D3400D06428 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B755C6191CBB3D3400D06428 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B755C61A1CBB3D3400D06428 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -30,7 +30,7 @@
 		B755C6271CBB3D3500D06428 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B755C62E1CBB3E7300D06428 /* RGDispatchQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGDispatchQueue.h; sourceTree = "<group>"; };
 		B755C62F1CBB3E7300D06428 /* RGDispatchQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGDispatchQueue.m; sourceTree = "<group>"; };
-		B755C6311CBB3E8400D06428 /* RGGCD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RGGCD.h; sourceTree = "<group>"; };
+		B755C6311CBB3E8400D06428 /* RGDispatch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RGDispatch.h; sourceTree = "<group>"; };
 		B7CC234B22B9C2BE00CCD737 /* RGDispatchSemaphore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RGDispatchSemaphore.h; sourceTree = "<group>"; };
 		B7CC234C22B9C2BE00CCD737 /* RGDispatchSemaphore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RGDispatchSemaphore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -49,7 +49,7 @@
 		B755C60A1CBB3D3400D06428 = {
 			isa = PBXGroup;
 			children = (
-				B755C6151CBB3D3400D06428 /* RGGCD */,
+				B755C6151CBB3D3400D06428 /* RGDispatch */,
 				B755C6141CBB3D3400D06428 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,15 +57,15 @@
 		B755C6141CBB3D3400D06428 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B755C6131CBB3D3400D06428 /* RGGCD.app */,
+				B755C6131CBB3D3400D06428 /* RGDispatch.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B755C6151CBB3D3400D06428 /* RGGCD */ = {
+		B755C6151CBB3D3400D06428 /* RGDispatch */ = {
 			isa = PBXGroup;
 			children = (
-				B755C62D1CBB3E0F00D06428 /* RGGCD */,
+				B755C62D1CBB3E0F00D06428 /* RGDispatch */,
 				B755C6191CBB3D3400D06428 /* AppDelegate.h */,
 				B755C61A1CBB3D3400D06428 /* AppDelegate.m */,
 				B755C61C1CBB3D3400D06428 /* ViewController.h */,
@@ -76,7 +76,7 @@
 				B755C6271CBB3D3500D06428 /* Info.plist */,
 				B755C6161CBB3D3400D06428 /* Supporting Files */,
 			);
-			path = RGGCD;
+			path = RGDispatch;
 			sourceTree = "<group>";
 		};
 		B755C6161CBB3D3400D06428 /* Supporting Files */ = {
@@ -87,24 +87,24 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B755C62D1CBB3E0F00D06428 /* RGGCD */ = {
+		B755C62D1CBB3E0F00D06428 /* RGDispatch */ = {
 			isa = PBXGroup;
 			children = (
-				B755C6311CBB3E8400D06428 /* RGGCD.h */,
+				B755C6311CBB3E8400D06428 /* RGDispatch.h */,
 				B755C62E1CBB3E7300D06428 /* RGDispatchQueue.h */,
 				B755C62F1CBB3E7300D06428 /* RGDispatchQueue.m */,
 				B7CC234B22B9C2BE00CCD737 /* RGDispatchSemaphore.h */,
 				B7CC234C22B9C2BE00CCD737 /* RGDispatchSemaphore.m */,
 			);
-			path = RGGCD;
+			path = RGDispatch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B755C6121CBB3D3400D06428 /* RGGCD */ = {
+		B755C6121CBB3D3400D06428 /* RGDispatch */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B755C62A1CBB3D3500D06428 /* Build configuration list for PBXNativeTarget "RGGCD" */;
+			buildConfigurationList = B755C62A1CBB3D3500D06428 /* Build configuration list for PBXNativeTarget "RGDispatch" */;
 			buildPhases = (
 				B755C60F1CBB3D3400D06428 /* Sources */,
 				B755C6101CBB3D3400D06428 /* Frameworks */,
@@ -114,9 +114,9 @@
 			);
 			dependencies = (
 			);
-			name = RGGCD;
+			name = RGDispatch;
 			productName = RGGCD;
-			productReference = B755C6131CBB3D3400D06428 /* RGGCD.app */;
+			productReference = B755C6131CBB3D3400D06428 /* RGDispatch.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -133,7 +133,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B755C60E1CBB3D3400D06428 /* Build configuration list for PBXProject "RGGCD" */;
+			buildConfigurationList = B755C60E1CBB3D3400D06428 /* Build configuration list for PBXProject "RGDispatch" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -146,7 +146,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B755C6121CBB3D3400D06428 /* RGGCD */,
+				B755C6121CBB3D3400D06428 /* RGDispatch */,
 			);
 		};
 /* End PBXProject section */
@@ -307,9 +307,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = RGGCD/Info.plist;
+				INFOPLIST_FILE = RGDispatch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.smartech.RGGCD;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.smartech.-RGDispatch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -318,9 +318,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = RGGCD/Info.plist;
+				INFOPLIST_FILE = RGDispatch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.smartech.RGGCD;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.smartech.-RGDispatch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -328,7 +328,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B755C60E1CBB3D3400D06428 /* Build configuration list for PBXProject "RGGCD" */ = {
+		B755C60E1CBB3D3400D06428 /* Build configuration list for PBXProject "RGDispatch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B755C6281CBB3D3500D06428 /* Debug */,
@@ -337,7 +337,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B755C62A1CBB3D3500D06428 /* Build configuration list for PBXNativeTarget "RGGCD" */ = {
+		B755C62A1CBB3D3500D06428 /* Build configuration list for PBXNativeTarget "RGDispatch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B755C62B1CBB3D3500D06428 /* Debug */,

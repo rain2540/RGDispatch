@@ -1,13 +1,13 @@
 //
 //  ViewController.m
-//  RGGCD
+//  RGDispatch
 //
 //  Created by RAIN on 16/4/11.
 //  Copyright © 2016年 Smartech. All rights reserved.
 //
 
 #import "ViewController.h"
-#import "RGGCD/RGGCD.h"
+#import "RGDispatch/RGDispatch.h"
 
 @interface ViewController ()
 
