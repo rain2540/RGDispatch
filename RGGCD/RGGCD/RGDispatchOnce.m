@@ -10,9 +10,9 @@
 
 @implementation RGDispatchOnce
 
-+ (void)perform:(dispatch_block_t)performance {
++ (void)perform:(dispatch_block_t)perform {
     static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, performance);
+    dispatch_once(&onceToken, perform);
 }
 
 @end

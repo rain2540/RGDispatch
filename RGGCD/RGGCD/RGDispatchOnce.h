@@ -10,6 +10,6 @@
 
 @interface RGDispatchOnce : NSObject
 
-+ (void)perform:(dispatch_block_t)performance;
++ (void)perform:(dispatch_block_t)perform;
 
 @end
