@@ -25,4 +25,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)taskOne:(UIButton *)sender {
+
+}
+
+- (IBAction)taskTwo:(UIButton *)sender {
+
+}
+
 @end
