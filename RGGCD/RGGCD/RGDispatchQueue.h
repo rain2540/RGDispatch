@@ -58,19 +58,19 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
  *
  *  @return 主线程队列
  */
-+ (RGDispatchQueue *)mainQueue;
++ (instancetype)mainQueue;
 
-+ (RGDispatchQueue *)globalQueueDefault;
++ (instancetype)globalQueueDefault;
 
-+ (RGDispatchQueue *)globalQueueUserInteractive;
++ (instancetype)globalQueueUserInteractive;
 
-+ (RGDispatchQueue *)globalQueueUtility;
++ (instancetype)globalQueueUtility;
 
-+ (RGDispatchQueue *)globalQueueBackground;
++ (instancetype)globalQueueBackground;
 
-+ (RGDispatchQueue *)globalQueueUserInitiated;
++ (instancetype)globalQueueUserInitiated;
 
-+ (RGDispatchQueue *)globalQueueUnspecified;
++ (instancetype)globalQueueUnspecified;
 
 @end
 
@@ -102,42 +102,42 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
  *
  *  @return 优先级为 QOS_CLASS_DEFAULT 的队列
  */
-+ (RGDispatchQueue *)defaultGlobalQueue DEPRECATED_MSG_ATTRIBUTE("Use +globalQueueDefault instead");
++ (instancetype)defaultGlobalQueue DEPRECATED_MSG_ATTRIBUTE("Use +globalQueueDefault instead");
 
 /**
  *  返回优先级为 QOS_CLASS_USER_INTERACTIVE: DISPATCH_QUEUE_PRIORITY_HIGH 的队列
  *
  *  @return 优先级为 QOS_CLASS_USER_INTERACTIVE 的队列
  */
-+ (RGDispatchQueue *)userInteractiveGlobalQueue DEPRECATED_MSG_ATTRIBUTE("Use +globalQueueUserInteractive instead");
++ (instancetype)userInteractiveGlobalQueue DEPRECATED_MSG_ATTRIBUTE("Use +globalQueueUserInteractive instead");
 
 /**
  *  返回优先级为 QOS_CLASS_UTILITY: DISPATCH_QUEUE_PRIORITY_LOW 的队列
  *
  *  @return 优先级为 QOS_CLASS_UTILITY 的队列
  */
-+ (RGDispatchQueue *)utilityGlobalQueue DEPRECATED_MSG_ATTRIBUTE("Use +globalQueueUtility instead");
++ (instancetype)utilityGlobalQueue DEPRECATED_MSG_ATTRIBUTE("Use +globalQueueUtility instead");
 
 /**
  *  返回优先级为 QOS_CLASS_BACKGROUND: DISPATCH_QUEUE_PRIORITY_BACKGROUND 的队列
  *
  *  @return 优先级为 QOS_CLASS_BACKGROUND 的队列
  */
-+ (RGDispatchQueue *)backgroundGlobalQueue DEPRECATED_MSG_ATTRIBUTE("Use +globalQueueBackground instead");
++ (instancetype)backgroundGlobalQueue DEPRECATED_MSG_ATTRIBUTE("Use +globalQueueBackground instead");
 
 /**
  *  返回优先级为 QOS_CLASS_USER_INITIATED 的队列
  *
  *  @return 优先级为 QOS_CLASS_USER_INITIATED 的队列
  */
-+ (RGDispatchQueue *)userInitiatedGlobalQueue DEPRECATED_MSG_ATTRIBUTE("Use +globalQueueUserInitiated instead");
++ (instancetype)userInitiatedGlobalQueue DEPRECATED_MSG_ATTRIBUTE("Use +globalQueueUserInitiated instead");
 
 /**
  *  返回优先级为 QOS_CLASS_UNSPECIFIED 的队列
  *
  *  @return 优先级为 QOS_CLASS_UNSPECIFIED 的队列
  */
-+ (RGDispatchQueue *)unspecifiedGlobalQueue DEPRECATED_MSG_ATTRIBUTE("Use +globalQueueUnspecified instead");
++ (instancetype)unspecifiedGlobalQueue DEPRECATED_MSG_ATTRIBUTE("Use +globalQueueUnspecified instead");
 
 
 #pragma mark - Performance

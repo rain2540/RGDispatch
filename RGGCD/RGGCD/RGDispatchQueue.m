@@ -91,43 +91,43 @@ static RGDispatchQueue *GlobalQueueUnspecified;
     return sharedInstance;
 }
 
-+ (RGDispatchQueue *)mainQueue {
++ (instancetype)mainQueue {
     MainQueue = [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeNone];
     MainQueue.dispatchQueue = dispatch_get_main_queue();
     return MainQueue;
 }
 
-+ (RGDispatchQueue *)globalQueueDefault {
++ (instancetype)globalQueueDefault {
     GlobalQueueDefault = [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeNone];
     GlobalQueueDefault.dispatchQueue = dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0);
     return GlobalQueueDefault;
 }
 
-+ (RGDispatchQueue *)globalQueueUserInteractive {
++ (instancetype)globalQueueUserInteractive {
     GlobalQueueUserInteractive = [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeNone];
     GlobalQueueUserInteractive.dispatchQueue = dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0);
     return GlobalQueueUserInteractive;
 }
 
-+ (RGDispatchQueue *)globalQueueUtility {
++ (instancetype)globalQueueUtility {
     GlobalQueueUtility = [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeNone];
     GlobalQueueUtility.dispatchQueue = dispatch_get_global_queue(QOS_CLASS_UTILITY, 0);
     return GlobalQueueUtility;
 }
 
-+ (RGDispatchQueue *)globalQueueBackground {
++ (instancetype)globalQueueBackground {
     GlobalQueueBackground = [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeNone];
     GlobalQueueBackground.dispatchQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0);
     return GlobalQueueBackground;
 }
 
-+ (RGDispatchQueue *)globalQueueUserInitiated {
++ (instancetype)globalQueueUserInitiated {
     GlobalQueueUserInitiated = [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeNone];
     GlobalQueueUserInitiated.dispatchQueue = dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0);
     return GlobalQueueUserInitiated;
 }
 
-+ (RGDispatchQueue *)globalQueueUnspecified {
++ (instancetype)globalQueueUnspecified {
     GlobalQueueUnspecified = [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeNone];
     GlobalQueueUnspecified.dispatchQueue = dispatch_get_global_queue(QOS_CLASS_UNSPECIFIED, 0);
     return GlobalQueueUnspecified;
@@ -163,37 +163,37 @@ static RGDispatchQueue *GlobalQueueUnspecified;
 @implementation RGDispatchQueue (Deprecated)
 
 #pragma mark Queues
-+ (RGDispatchQueue *)defaultGlobalQueue {
++ (instancetype)defaultGlobalQueue {
     GlobalQueueDefault = [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeNone];
     GlobalQueueDefault.dispatchQueue = dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0);
     return GlobalQueueDefault;
 }
 
-+ (RGDispatchQueue *)userInteractiveGlobalQueue {
++ (instancetype)userInteractiveGlobalQueue {
     GlobalQueueUserInteractive = [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeNone];
     GlobalQueueUserInteractive.dispatchQueue = dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0);
     return GlobalQueueUserInteractive;
 }
 
-+ (RGDispatchQueue *)utilityGlobalQueue {
++ (instancetype)utilityGlobalQueue {
     GlobalQueueUtility = [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeNone];
     GlobalQueueUtility.dispatchQueue = dispatch_get_global_queue(QOS_CLASS_UTILITY, 0);
     return GlobalQueueUtility;
 }
 
-+ (RGDispatchQueue *)backgroundGlobalQueue {
++ (instancetype)backgroundGlobalQueue {
     GlobalQueueBackground = [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeNone];
     GlobalQueueBackground.dispatchQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0);
     return GlobalQueueBackground;
 }
 
-+ (RGDispatchQueue *)userInitiatedGlobalQueue {
++ (instancetype)userInitiatedGlobalQueue {
     GlobalQueueUserInitiated = [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeNone];
     GlobalQueueUserInitiated.dispatchQueue = dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0);
     return GlobalQueueUserInitiated;
 }
 
-+ (RGDispatchQueue *)unspecifiedGlobalQueue {
++ (instancetype)unspecifiedGlobalQueue {
     GlobalQueueUnspecified = [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeNone];
     GlobalQueueUnspecified.dispatchQueue = dispatch_get_global_queue(QOS_CLASS_UNSPECIFIED, 0);
     return GlobalQueueUnspecified;
