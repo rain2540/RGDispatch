@@ -53,23 +53,25 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 
 + (instancetype)sharedSerialQueue;
 
-/**
- *  返回主线程队列
- *
- *  @return 主线程队列
- */
+/// 返回主线程队列
 + (instancetype)mainQueue;
 
-+ (instancetype)globalQueueDefault;
-
+/// 返回优先级为 QOS_CLASS_USER_INTERACTIVE: DISPATCH_QUEUE_PRIORITY_HIGH 的队列
 + (instancetype)globalQueueUserInteractive;
 
-+ (instancetype)globalQueueUtility;
-
-+ (instancetype)globalQueueBackground;
-
+/// 返回优先级为 QOS_CLASS_USER_INITIATED 的队列
 + (instancetype)globalQueueUserInitiated;
 
+/// 返回优先级为 QOS_CLASS_DEFAULT: DISPATCH_QUEUE_PRIORITY_DEFAULT 的队列
++ (instancetype)globalQueueDefault;
+
+/// 返回优先级为 QOS_CLASS_UTILITY: DISPATCH_QUEUE_PRIORITY_LOW 的队列
++ (instancetype)globalQueueUtility;
+
+/// 返回优先级为 QOS_CLASS_BACKGROUND: DISPATCH_QUEUE_PRIORITY_BACKGROUND 的队列
++ (instancetype)globalQueueBackground;
+
+/// 返回优先级为 QOS_CLASS_UNSPECIFIED 的队列
 + (instancetype)globalQueueUnspecified;
 
 @end
@@ -80,11 +82,16 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 @interface RGDispatchQueue (Perform)
 
 /// 在调度队列上提交一个异步执行的 block, 并且立即返回
-/// @param performance 要提交到目标调度队列的 block, 此参数不能为 NULL
+/// @param perform 要提交到目标调度队列的 block, 此参数不能为 NULL
 - (void)async:(dispatch_block_t)perform;
 
+/// 在调度队列上提交一个同步执行的 block, 并且立即返回
+/// @param perform 要提交到目标调度队列的 block, 此参数不能为 NULL
 - (void)sync:(dispatch_block_t)perform;
 
+/// 在指定时间间隔执行的 block
+/// @param delta 指定的时间间隔
+/// @param perform 要提交的 block, 此参数不能为 NULL
 - (void)after:(int64_t)delta
       perform:(dispatch_block_t)perform;
 
