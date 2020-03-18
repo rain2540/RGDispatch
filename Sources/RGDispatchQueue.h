@@ -77,23 +77,23 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 @end
 
 
-#pragma mark - Perform
+#pragma mark - Excute
 
-@interface RGDispatchQueue (Perform)
+@interface RGDispatchQueue (Excute)
 
 /// 在调度队列上提交一个异步执行的 block, 并且立即返回
-/// @param perform 要提交到目标调度队列的 block, 此参数不能为 NULL
-- (void)async:(dispatch_block_t)perform;
+/// @param excute 要提交到目标调度队列的 block, 此参数不能为 NULL
+- (void)async:(dispatch_block_t)excute;
 
 /// 在调度队列上提交一个同步执行的 block, 并且立即返回
-/// @param perform 要提交到目标调度队列的 block, 此参数不能为 NULL
-- (void)sync:(dispatch_block_t)perform;
+/// @param excute 要提交到目标调度队列的 block, 此参数不能为 NULL
+- (void)sync:(dispatch_block_t)excute;
 
 /// 在指定时间间隔执行的 block
 /// @param delta 指定的时间间隔
-/// @param perform 要提交的 block, 此参数不能为 NULL
+/// @param excute 要提交的 block, 此参数不能为 NULL
 - (void)after:(int64_t)delta
-      perform:(dispatch_block_t)perform;
+       excute:(dispatch_block_t)excute;
 
 @end
 
