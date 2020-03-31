@@ -36,6 +36,9 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 
 - (instancetype)initWithLabel:(const char *)label
                     queueType:(DispatchQueueType)queueType;
+
+/// 按给定类型，初始化队列
+/// @param queueType 队列类型
 - (instancetype)initWithQueueType:(DispatchQueueType)queueType;
 
 @end
