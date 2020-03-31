@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B755C6121CBB3D3400D06428"
-               BuildableName = "RGDispatch.app"
+               BlueprintIdentifier = "B70B8ACC24215B970061E464"
+               BuildableName = "RGDispatch.framework"
                BlueprintName = "RGDispatch"
                ReferencedContainer = "container:RGDispatch.xcodeproj">
             </BuildableReference>
@@ -28,10 +28,20 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B70B8AD524215B970061E464"
+               BuildableName = "RGDispatchTests.xctest"
+               BlueprintName = "RGDispatchTests"
+               ReferencedContainer = "container:RGDispatch.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -40,16 +50,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B755C6121CBB3D3400D06428"
-            BuildableName = "RGDispatch.app"
-            BlueprintName = "RGDispatch"
-            ReferencedContainer = "container:RGDispatch.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -57,16 +57,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B755C6121CBB3D3400D06428"
-            BuildableName = "RGDispatch.app"
+            BlueprintIdentifier = "B70B8ACC24215B970061E464"
+            BuildableName = "RGDispatch.framework"
             BlueprintName = "RGDispatch"
             ReferencedContainer = "container:RGDispatch.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
