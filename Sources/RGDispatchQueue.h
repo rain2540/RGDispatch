@@ -49,6 +49,7 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 
 + (instancetype)serialQueue;
 
+/// 共享并发队列
 + (instancetype)sharedConcurrentQueue;
 
 /// 共享串行队列
