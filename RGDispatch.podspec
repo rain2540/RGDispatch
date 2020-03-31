@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.author             = { "rain2540" => "rain2540@foxmail.com" }
   s.social_media_url   = "https://weibo.com/rain2540"
   s.source       = { :git => "https://github.com/rain2540/RGDispatch.git", :tag => s.version }
-  spec.requires_arc = true
+  s.requires_arc = true
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -43,10 +43,10 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Classes", "Classes/**/*.{h,m}"
-  s.exclude_files = "Classes/Exclude"
+  s.source_files  = "Sources/*.{h,m}"
+  # s.exclude_files = "Classes/Exclude"
 
-  # spec.public_header_files = "Classes/**/*.h"
+  s.public_header_files = "Sources/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
