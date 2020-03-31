@@ -11,12 +11,12 @@
 /**
  队列类型
  
- - DispatchQueueTypeConcurrent: 并行队列
+ - DispatchQueueTypeConcurrent: 并发队列
  - DispatchQueueTypeSerial: 串行队列
  - DispatchQueueTypeNone: 不指定类型
  */
 typedef NS_ENUM(NSUInteger, DispatchQueueType) {
-    /// 并行队列
+    /// 并发队列
     DispatchQueueTypeConcurrent,
     /// 串行队列
     DispatchQueueTypeSerial,
