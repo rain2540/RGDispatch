@@ -45,6 +45,7 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 
 @interface RGDispatchQueue (Queues)
 
+/// 标识为 nil 的并发队列
 + (instancetype)concurrentQueue;
 
 /// 标识为 nil 的串行队列
