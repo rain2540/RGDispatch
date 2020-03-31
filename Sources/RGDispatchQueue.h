@@ -34,6 +34,9 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 
 #pragma mark - Lifecycle
 
+/// 按给定标识、类型，初始化队列
+/// @param label 队列标识
+/// @param queueType 队列类型
 - (instancetype)initWithLabel:(const char *)label
                     queueType:(DispatchQueueType)queueType;
 
