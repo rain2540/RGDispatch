@@ -148,10 +148,10 @@ static RGDispatchQueue *GlobalQueueUnspecified;
     dispatch_sync(self.dispatchQueue, excute);
 }
 
-- (void)after:(int64_t)delta
-      excute:(dispatch_block_t)excute
+- (void)after:(double_t)delta
+       excute:(dispatch_block_t)excute
 {
-    dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, delta);
+    dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, ((int64_t)(delta * NSEC_PER_SEC)));
     dispatch_after(time, self.dispatchQueue, excute);
 }
 

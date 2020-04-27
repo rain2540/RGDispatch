@@ -102,7 +102,7 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 /// 在指定时间间隔执行的 block
 /// @param delta 指定的时间间隔
 /// @param excute 要提交的 block, 此参数不能为 NULL
-- (void)after:(int64_t)delta
+- (void)after:(double_t)delta
        excute:(dispatch_block_t)excute;
 
 @end
