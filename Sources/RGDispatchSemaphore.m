@@ -20,14 +20,14 @@
 
 #pragma mark Initializer
 - (instancetype)init {
-    if (self == [super init]) {
+    if (self = [super init]) {
         self.semaphore = dispatch_semaphore_create(0);
     }
     return self;
 }
 
 - (instancetype)initWithValue:(NSInteger)value {
-    if (self == [super init]) {
+    if (self = [super init]) {
         self.semaphore = dispatch_semaphore_create(value);
     }
     return self;
