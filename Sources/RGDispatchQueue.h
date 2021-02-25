@@ -106,3 +106,12 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
        excute:(dispatch_block_t)excute;
 
 @end
+
+
+#pragma mark - Barrier
+
+@interface RGDispatchQueue (Barrier)
+
+
+
+@end

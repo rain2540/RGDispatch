@@ -156,3 +156,12 @@ static RGDispatchQueue *GlobalQueueUnspecified;
 }
 
 @end
+
+
+#pragma mark - Barrier
+
+@implementation RGDispatchQueue (Barrier)
+
+
+
+@end
