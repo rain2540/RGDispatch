@@ -114,4 +114,6 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 
 - (void)barrierSync:(dispatch_block_t)excute;
 
+- (void)barrierAsync:(dispatch_block_t)excute;
+
 @end

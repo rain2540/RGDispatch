@@ -166,4 +166,8 @@ static RGDispatchQueue *GlobalQueueUnspecified;
     dispatch_barrier_sync(self.dispatchQueue, excute);
 }
 
+- (void)barrierAsync:(dispatch_block_t)excute {
+    dispatch_barrier_async(self.dispatchQueue, excute);
+}
+
 @end
