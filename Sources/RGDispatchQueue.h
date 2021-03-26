@@ -112,8 +112,12 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 
 @interface RGDispatchQueue (Barrier)
 
+/// 提交一个在调度队列上，做为屏障，同步执行的 block
+/// @param excute 在目标调度队列上要调用的 block, 此参数不能为 NULL
 - (void)barrierSync:(dispatch_block_t)excute;
 
+/// 提交一个在调度队列上，做为屏障，异步执行的 block
+/// @param excute 在目标调度队列上要调用的 block, 此参数不能为 NULL
 - (void)barrierAsync:(dispatch_block_t)excute;
 
 @end
