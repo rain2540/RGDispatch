@@ -14,10 +14,21 @@ Pod::Spec.new do |s|
   s.summary      = "Grand Central Dispatch in object-oriented style."
   #s.description  = <<-DESC
                   #DESC
-  s.homepage     = "https://github.com/rain2540/RGDispatch"
+  # Home Page of GitHUb
+  # s.homepage     = "https://github.com/rain2540/RGDispatch"
+
+  # Home Page of Gitee
+  s.homepage     = "https://gitee.com/rain2540/RGDispatch"
+
   s.author             = { "rain2540" => "rain2540@foxmail.com" }
   s.social_media_url   = "https://weibo.com/rain2540"
-  s.source       = { :git => "https://github.com/rain2540/RGDispatch.git", :tag => s.version }
+
+  # source of GitHub
+  # s.source       = { :git => "https://github.com/rain2540/RGDispatch.git", :tag => s.version }
+
+  # source of Gitee
+  s.source       = { :git => "https://gitee.com/rain2540/RGDispatch.git", :tag => s.version }
+
   s.requires_arc = true
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
