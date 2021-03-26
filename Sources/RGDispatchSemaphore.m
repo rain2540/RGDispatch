@@ -16,9 +16,11 @@
 
 
 #pragma mark -
+
 @implementation RGDispatchSemaphore
 
 #pragma mark Initializer
+
 - (instancetype)init {
     if (self = [super init]) {
         self.semaphore = dispatch_semaphore_create(0);
@@ -35,6 +37,7 @@
 
 
 #pragma mark - Public
+
 - (NSInteger)waitFor:(NSInteger)timeout {
     NSInteger resValue = dispatch_semaphore_wait(self.semaphore, timeout);
     return resValue;
