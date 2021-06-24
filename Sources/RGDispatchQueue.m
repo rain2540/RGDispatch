@@ -31,7 +31,8 @@ static RGDispatchQueue *GlobalQueueUnspecified;
 #pragma mark Lifecycle
 
 - (instancetype)initWithQueueType:(DispatchQueueType)queueType {
-    return [[RGDispatchQueue alloc] initWithLabel:nil queueType:queueType];
+    RGDispatchQueue *queue = [[RGDispatchQueue alloc] initWithLabel:nil queueType:queueType];
+    return queue;
 }
 
 - (instancetype)initWithLabel:(const char *)label
@@ -55,7 +56,6 @@ static RGDispatchQueue *GlobalQueueUnspecified;
             default:
                 break;
         }
-        
     }
     return self;
 }
@@ -68,19 +68,23 @@ static RGDispatchQueue *GlobalQueueUnspecified;
 @implementation RGDispatchQueue (Queues)
 
 + (instancetype)serialQueue {
-    return [RGDispatchQueue serialQueueWithLabel:nil];
+    RGDispatchQueue *queue = [RGDispatchQueue serialQueueWithLabel:nil];
+    return queue;
 }
 
 + (instancetype)concurrentQueue {
-    return [RGDispatchQueue concurrentQueueWithLabel:nil];
+    RGDispatchQueue *queue = [RGDispatchQueue concurrentQueueWithLabel:nil];
+    return queue;
 }
 
 + (instancetype)serialQueueWithLabel:(const char *)label {
-    return [[RGDispatchQueue alloc] initWithLabel:label queueType:DispatchQueueTypeSerial];
+    RGDispatchQueue *queue = [[RGDispatchQueue alloc] initWithLabel:label queueType:DispatchQueueTypeSerial];
+    return queue;
 }
 
 + (instancetype)concurrentQueueWithLabel:(const char *)label {
-    return [[RGDispatchQueue alloc] initWithLabel:label queueType:DispatchQueueTypeConcurrent];
+    RGDispatchQueue *queue = [[RGDispatchQueue alloc] initWithLabel:label queueType:DispatchQueueTypeConcurrent];
+    return queue;
 }
 
 + (instancetype)sharedSerialQueue {
