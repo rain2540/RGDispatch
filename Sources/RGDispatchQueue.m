@@ -91,7 +91,7 @@ static RGDispatchQueue *GlobalQueueUnspecified;
     static RGDispatchQueue * sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sharedInstance = [RGDispatchQueue serialQueue];
+        sharedInstance = [RGDispatchQueue serialQueueWithLabel:"RGDispatch.Queue.Shared.Serial"];
     });
     return sharedInstance;
 }
@@ -100,7 +100,7 @@ static RGDispatchQueue *GlobalQueueUnspecified;
     static RGDispatchQueue * sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sharedInstance = [RGDispatchQueue concurrentQueue];
+        sharedInstance = [RGDispatchQueue concurrentQueueWithLabel:"RGDispatch.Queue.Shared.Concurrent"];
     });
     return sharedInstance;
 }
