@@ -10,16 +10,16 @@
 
 /**
  队列类型
- 
- - DispatchQueueTypeConcurrent: 并发队列
+
  - DispatchQueueTypeSerial: 串行队列
+ - DispatchQueueTypeConcurrent: 并发队列
  - DispatchQueueTypeNone: 不指定类型
  */
 typedef NS_ENUM(NSUInteger, DispatchQueueType) {
-    /// 并发队列
-    DispatchQueueTypeConcurrent,
     /// 串行队列
     DispatchQueueTypeSerial,
+    /// 并发队列
+    DispatchQueueTypeConcurrent,
     /// 不指定队列类型
     DispatchQueueTypeNone,
 };
@@ -34,15 +34,15 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 
 #pragma mark - Lifecycle
 
+/// 按给定类型，初始化队列
+/// @param queueType 队列类型
+- (instancetype)initWithQueueType:(DispatchQueueType)queueType;
+
 /// 按给定标识、类型，初始化队列
 /// @param label 队列标识
 /// @param queueType 队列类型
 - (instancetype)initWithLabel:(const char *)label
                     queueType:(DispatchQueueType)queueType;
-
-/// 按给定类型，初始化队列
-/// @param queueType 队列类型
-- (instancetype)initWithQueueType:(DispatchQueueType)queueType;
 
 @end
 
@@ -51,17 +51,21 @@ typedef NS_ENUM(NSUInteger, DispatchQueueType) {
 
 @interface RGDispatchQueue (Queues)
 
-/// 标识为 nil 的并发队列
-+ (instancetype)concurrentQueue;
-
 /// 标识为 nil 的串行队列
 + (instancetype)serialQueue;
 
-/// 共享并发队列
-+ (instancetype)sharedConcurrentQueue;
+/// 标识为 nil 的并发队列
++ (instancetype)concurrentQueue;
+
++ (instancetype)serialQueueWithLabel:(const char *)label ;
+
++ (instancetype)concurrentQueueWithLabel:(const char *)label;
 
 /// 共享串行队列
 + (instancetype)sharedSerialQueue;
+
+/// 共享并发队列
++ (instancetype)sharedConcurrentQueue;
 
 /// 返回主线程队列
 + (instancetype)mainQueue;

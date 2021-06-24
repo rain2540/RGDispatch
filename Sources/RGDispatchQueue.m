@@ -23,10 +23,16 @@ static RGDispatchQueue *GlobalQueueUnspecified;
 
 @end
 
+
 #pragma mark -
+
 @implementation RGDispatchQueue
 
 #pragma mark Lifecycle
+
+- (instancetype)initWithQueueType:(DispatchQueueType)queueType {
+    return [[RGDispatchQueue alloc] initWithLabel:nil queueType:queueType];
+}
 
 - (instancetype)initWithLabel:(const char *)label
                     queueType:(DispatchQueueType)queueType
@@ -34,12 +40,12 @@ static RGDispatchQueue *GlobalQueueUnspecified;
     self = [super init];
     if (self) {
         switch (queueType) {
-            case DispatchQueueTypeConcurrent:
-                self.dispatchQueue = dispatch_queue_create(label, DISPATCH_QUEUE_CONCURRENT);
-                break;
-                
             case DispatchQueueTypeSerial:
                 self.dispatchQueue = dispatch_queue_create(label, DISPATCH_QUEUE_SERIAL);
+                break;
+
+            case DispatchQueueTypeConcurrent:
+                self.dispatchQueue = dispatch_queue_create(label, DISPATCH_QUEUE_CONCURRENT);
                 break;
                 
             case DispatchQueueTypeNone:
@@ -54,10 +60,6 @@ static RGDispatchQueue *GlobalQueueUnspecified;
     return self;
 }
 
-- (instancetype)initWithQueueType:(DispatchQueueType)queueType {
-    return [[RGDispatchQueue alloc] initWithLabel:nil queueType:queueType];
-}
-
 @end
 
 
@@ -65,21 +67,20 @@ static RGDispatchQueue *GlobalQueueUnspecified;
 
 @implementation RGDispatchQueue (Queues)
 
-+ (instancetype)concurrentQueue {
-    return [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeConcurrent];
-}
-
 + (instancetype)serialQueue {
-    return [[RGDispatchQueue alloc] initWithQueueType:DispatchQueueTypeSerial];
+    return [RGDispatchQueue serialQueueWithLabel:nil];
 }
 
-+ (instancetype)sharedConcurrentQueue {
-    static RGDispatchQueue * sharedInstance = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        sharedInstance = [RGDispatchQueue concurrentQueue];
-    });
-    return sharedInstance;
++ (instancetype)concurrentQueue {
+    return [RGDispatchQueue concurrentQueueWithLabel:nil];
+}
+
++ (instancetype)serialQueueWithLabel:(const char *)label {
+    return [[RGDispatchQueue alloc] initWithLabel:label queueType:DispatchQueueTypeSerial];
+}
+
++ (instancetype)concurrentQueueWithLabel:(const char *)label {
+    return [[RGDispatchQueue alloc] initWithLabel:label queueType:DispatchQueueTypeConcurrent];
 }
 
 + (instancetype)sharedSerialQueue {
@@ -87,6 +88,15 @@ static RGDispatchQueue *GlobalQueueUnspecified;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [RGDispatchQueue serialQueue];
+    });
+    return sharedInstance;
+}
+
++ (instancetype)sharedConcurrentQueue {
+    static RGDispatchQueue * sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [RGDispatchQueue concurrentQueue];
     });
     return sharedInstance;
 }
